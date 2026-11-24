@@ -1,0 +1,37 @@
+{
+  "spdxVersion": "SPDX-2.3",
+  "name": "SPDX-Tools-v2.0",
+  "packages": [
+    {
+      "name": "Apache Commons Lang",
+      "versionInfo": "1.1",
+      "licenseConcluded": "(LicenseRef-3 AND LGPL-2.0-or-later)",
+      "copyrightText": "Copyright Example"
+    },
+    {
+      "name": "glibc",
+      "versionInfo": "2.11.1",
+      "licenseConcluded": "LGPL-2.0-only AND LicenseRef-3 AND GPL-2.0-or-later WITH Bison-exception-2.2",
+      "copyrightText": "Copyright 2008-2010 John Smith"
+    },
+    {
+      "name": "Jena",
+      "versionInfo": "3.12.0",
+      "licenseConcluded": "LGPL-2.1-only OR MIT OR BSD-3-Clause",
+      "copyrightText": "Copyright Example"
+    },
+    {
+      "name": "Saxon",
+      "versionInfo": "8.8",
+      "licenseConcluded": "GPL-2.0-only WITH Autoconf-exception-2.0 AND MIT",
+      "copyrightText": "Copyright Saxonica Ltd"
+    }
+  ],
+  "hasExtractedLicensingInfos": [
+    {
+      "licenseId": "LicenseRef-3",
+      "name": "CyberNeko License",
+      "extractText": "The CyberNeko Software License, Version 1.0\n\n \n(C) Copyright 2002-2005, Andy Clark.  All rights reserved.\n \nRedistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions\nare met:\n\n1. Redistributions of source code must retain the above copyright\n   notice, this list of conditions and the following disclaimer. \n\n2. Redistributions in binary form must reproduce the above copyright\n   notice, this list of conditions and the following disclaimer in\n   the documentation and/or other materials provided with the\n   distribution.\n\n3. The end-user documentation included with the redistribution,\n   if any, must include the following acknowledgment:  \n     \"This product includes software developed by Andy Clark.\"\n   Alternately, this acknowledgment may appear in the software itself,\n   if and wherever such third-party acknowledgments normally appear.\n\n4. The names \"CyberNeko\" and \"NekoHTML\" must not be used to endorse\n   or promote products derived from this software without prior \n   written permission. For written permission, please contact \n   andyc@cyberneko.net.\n\n5. Products derived from this software may not be called \"CyberNeko\",\n   nor may \"CyberNeko\" appear in their name, without prior written\n   permission of the author.\n\nTHIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESSED OR IMPLIED\nWARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES\nOF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\nDISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR OTHER CONTRIBUTORS\nBE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, \nOR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT \nOF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR \nBUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, \nWHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE \nOR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, \nEVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n"
+    }
+  ]
+}

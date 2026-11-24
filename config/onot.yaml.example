@@ -1,0 +1,10 @@
+# onot 1.2.x — `s2j-oss-notice init` template (standalone / L1 generate --config).
+# Full host onboarding (ack.config.json, Syft, venv): `s2j-acknowledgements init --preset …`
+# https://github.com/sktelecom/onot
+
+company:
+  organization: ""
+  copyright_holder: ""
+  copyright_year: 2026
+  contact_email: ""
+  source_download_url: ""

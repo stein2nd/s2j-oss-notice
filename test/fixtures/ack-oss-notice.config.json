@@ -1,0 +1,11 @@
+{
+  "preset": "dir",
+  "output": "build/oss-notice/ACKNOWLEDGEMENTS.md",
+  "workDir": "build/oss-notice",
+  "scanPaths": ["."],
+  "pipeline": {
+    "engine": "oss-notice",
+    "feluda": false,
+    "onotConfig": "onot.yaml"
+  }
+}

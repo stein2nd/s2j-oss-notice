@@ -1,0 +1,30 @@
+{
+  "spdxVersion": "SPDX-2.3",
+  "name": "SPDX-Tools-v2.0",
+  "packages": [
+    {
+      "name": "Apache Commons Lang",
+      "versionInfo": "1.1",
+      "licenseConcluded": "(LicenseRef-3 AND LGPL-2.0-or-later)",
+      "copyrightText": "Copyright Example"
+    },
+    {
+      "name": "Jena",
+      "versionInfo": "3.12.0",
+      "licenseConcluded": "LGPL-2.1-only OR MIT OR BSD-3-Clause",
+      "copyrightText": "Copyright Example"
+    }
+  ],
+  "hasExtractedLicensingInfos": [
+    {
+      "licenseId": "MIT",
+      "name": "MIT License",
+      "extractText": "Permission is hereby granted, free of charge, to any person obtaining a copy of this software..."
+    },
+    {
+      "licenseId": "BSD-3-Clause",
+      "name": "BSD 3-Clause",
+      "extractText": "Redistribution and use in source and binary forms..."
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+lockfileVersion: '6.0'
+
+importers:
+  .:
+    dependencies:
+      left-pad:
+        specifier: ^1.0.0
+        version: 1.0.0
+
+packages:
+  left-pad@1.0.0:
+    resolution:
+      integrity: sha512-0fb3HkS6c8oPLmjfNhD8dQ4D9pJp6V5O0X5h1o0xa8w0a0k0Q==
+      tarball: https://registry.npmjs.org/left-pad/-/left-pad-1.0.0.tgz
+    license: MIT

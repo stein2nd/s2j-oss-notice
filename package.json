@@ -1,0 +1,100 @@
+{
+  "name": "@s2j/oss-notice",
+  "version": "0.0.1",
+  "description": "OSS Notice (SPDX/L1, Ack backend) and lockfile-to-Acknowledgements (L0 standalone) for Composer, npm, pnpm, and yarn.",
+  "type": "module",
+  "author": "Koutarou ISHIKAWA",
+  "license": "GPL-3.0-or-later",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stein2nd/s2j-oss-notice.git"
+  },
+  "homepage": "https://github.com/stein2nd/s2j-oss-notice#readme",
+  "bugs": {
+    "url": "https://github.com/stein2nd/s2j-oss-notice/issues"
+  },
+  "keywords": [
+    "oss",
+    "open-source",
+    "license",
+    "acknowledgements",
+    "notice",
+    "composer",
+    "npm",
+    "spdx",
+    "cyclonedx",
+    "cli"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "files": [
+    "dist/",
+    "config/",
+    "package.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "bin": {
+    "s2j-oss-notice": "dist/bin/cli.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "lint:docs": "s2j-docs-linter ./README.md ./CHANGELOG.md ./docs/*.md ./docs/**/*.md ./docs_mod/*.md ./docs_mod/**/*.md",
+    "docs:heading-tags": "python3 scripts/apply-heading-tags.py",
+    "docs:status-checklist": "python3 scripts/sync-status-checklist.py",
+    "licenses:sync": "python3 scripts/sync-bundled-licenses.py",
+    "lint": "eslint . && npm run typecheck",
+    "lint:fix": "eslint . --fix",
+    "clean": "rm -rf dist",
+    "build": "vite build && tsc -p tsconfig.build.json",
+    "typecheck": "tsc6 -p tsconfig.json --noEmit",
+    "dev": "vite build --watch",
+    "format": "prettier --write \"**/*.{ts,mjs,cjs,js,json}\"",
+    "format:check": "prettier --check \"**/*.{ts,mjs,cjs,js,json}\"",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:doctor": "bash scripts/test-doctor.sh",
+    "prepare": "npm run build",
+    "pack:check": "npm pack --dry-run"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@s2j/docs-linter": "^1.0.34",
+    "@types/node": "^26.6.6",
+    "@typescript/native": "npm:typescript@^7.0.2",
+    "eslint": "^10.15.0",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.14.0",
+    "prettier": "^3.10.1",
+    "typescript": "npm:@typescript/typescript6@^6.0.2",
+    "typescript-eslint": "^8.73.0",
+    "vite": "^8.3.8",
+    "vitest": "^5.1.1"
+  },
+  "allowScripts": {
+    "@s2j/docs-linter": true
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "overrides": {
+    "glob": "^14.0.3",
+    "minimatch": "^11.0.4",
+    "typescript": "npm:@typescript/typescript6@^6.0.2"
+  },
+  "dependencies": {
+    "commander": "^15.1.0",
+    "fast-xml-parser": "^5.12.1",
+    "yaml": "^2.9.1"
+  }
+}
