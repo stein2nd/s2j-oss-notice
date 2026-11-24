@@ -65,7 +65,8 @@
     "test:watch": "vitest",
     "test:doctor": "bash scripts/test-doctor.sh",
     "prepare": "npm run build",
-    "pack:check": "npm pack --dry-run"
+    "pack:check": "npm pack --dry-run",
+    "prepublishOnly": "npm run pack:check"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

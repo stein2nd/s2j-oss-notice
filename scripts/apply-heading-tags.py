@@ -27,6 +27,7 @@ TARGETS = [
     "docs/onot-parity.md",
     "docs/pipeline-integration.md",
     "docs/l0-standalone.md",
+    "docs/publish.md",
     "docs/priorities.md",
     "docs/specs.md",
     "docs/status.md",
