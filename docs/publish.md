@@ -39,3 +39,17 @@ gh release create v0.0.1 --title "v0.0.1" --notes-file CHANGELOG-excerpt.md
 * `README.md`、`LICENSE`
 
 `docs/` は tarball に含めません (正本は GitHub)。
+
+## 初回公開で `404` / `401` のとき `{@publish:s-trouble}`
+
+| 症状 | 対処 |
+| --- | --- |
+| `PUT … @s2j/oss-notice 404` | npm の `@s2j` 組織メンバーであること、`npm login` 済み (2FA)。GitHub `NPM_TOKEN` を **Automation** / publish 権限付き Granular Token に更新 |
+| `401 Unauthorized` (ローカル `npm whoami`) | `~/.npmrc` のトークン失効。`npm login` 後、Actions Secret `NPM_TOKEN` を再設定 |
+| `0.0.0-stage` のみ見える | [Staged publishing](https://docs.npmjs.com/staged-publishing/)。`npm stage list` → `npm stage approve <id>` |
+
+公開確認:
+
+```zsh
+npm view @s2j/oss-notice version --prefer-online
+```
