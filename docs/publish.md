@@ -14,7 +14,7 @@
 | GitHub Release | Releases ページのみ (registry は変わらない) |
 | `npm publish` / workflow 成功 | registry の `latest` が更新される |
 
-初回はリポジトリ Secret に **`NPM_TOKEN`** (npm Automation または Granular publish 権限) を登録してください。[@s2j/acknowledgements](https://github.com/stein2nd/s2j-acknowledgements) と同じトークンを使えます。
+初回はリポジトリ Secret に **`NPM_TOKEN`** (Granular、**Read and write (publish and stage)** または stage-only) を登録してください。CI から OTP なしで上げるには **Bypass2FA** を有効にします ([npm ドキュメント](https://docs.npmjs.com/creating-and-viewing-access-tokens/))。
 
 ## 手順 `{@publish:s-h002}`
 
@@ -46,7 +46,28 @@ gh release create v0.0.1 --title "v0.0.1" --notes-file CHANGELOG-excerpt.md
 | --- | --- |
 | `PUT … @s2j/oss-notice 404` | npm の `@s2j` 組織メンバーであること、`npm login` 済み (2FA)。GitHub `NPM_TOKEN` を **Automation** / publish 権限付き Granular Token に更新 |
 | `401 Unauthorized` (ローカル `npm whoami`) | `~/.npmrc` のトークン失効。`npm login` 後、Actions Secret `NPM_TOKEN` を再設定 |
-| `0.0.0-stage` のみ見える | [Staged publishing](https://docs.npmjs.com/staged-publishing/)。`npm stage list` → `npm stage approve <id>` |
+| `0.0.0-stage` / Temporary Holding Version | **初回パッケージは正常**。実体 `0.0.1` は承認待ち → 下記 [§ステージ承認](#publish-s-stage-approve) |
+| `EOTP` (CI) | Granular で **Bypass2FA**、または maintainer が Web で承認 |
+
+## ステージ承認 (初回・`0.0.0-stage`) `{@publish:s-stage-approve}`
+
+新規パッケージでは、CI / `npm publish` 成功後も npm ページは **Temporary Holding Version (`0.0.0-stage`)** のままです。**0.0.1** 等の tarball は公開キューに入り、**2FA 付き承認** 後に `latest` になります ([Staged publishing](https://docs.npmjs.com/staged-publishing/))。
+
+### npmjs.com (推奨)
+
+1. ログイン → プロフィール → **Staged Packages** (またはパッケージ `@s2j/oss-notice` の管理画面)
+2. **0.0.1** を確認 → **Approve** (認証アプリで2FA)
+3. 数分後: `npm view @s2j/oss-notice version --prefer-online` が **0.0.1** になる
+
+### CLI
+
+```zsh
+npm stage list @s2j/oss-notice
+npm stage view <stage-id>
+npm stage approve <stage-id> --otp=<6桁>
+```
+
+`npm stage list` が空でも Web の **Staged Packages** に載っていることがあります (アカウントでログインした maintainer で承認)。
 
 公開確認:
 
